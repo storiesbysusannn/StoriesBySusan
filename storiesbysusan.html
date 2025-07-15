@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>StoriesBySusann – Photographer</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 8rem 1rem 6rem;
+      background: url('header-bg.jpg') no-repeat center top/cover;
+      color: #fff;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    .tagline {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: #f3f3f3;
+      margin-top: 0.5rem;
+    }
+
+    .about {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      text-align: center;
+    }
+
+    .gallery-title {
+      text-align: center;
+      font-size: 1.8rem;
+      color: #444;
+      margin-top: 3rem;
+    }
+
+    .gallery {
+      column-count: 3;
+      column-gap: 1.5rem;
+      padding: 2rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      margin-bottom: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      background: rgba(0, 0, 0, 0.85);
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    .popup img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+
+    .popup:active {
+      display: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: #f5f5f5;
+      font-size: 0.95rem;
+    }
+
+    a {
+      color: #444;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      color: #000;
+    }
+
+    @media (max-width: 768px) {
+      .gallery {
+        column-count: 2;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery {
+        column-count: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>StoriesBySusann</h1>
+    <p class="tagline">"Through every shot, stories speak."<br />The art of noticing life's fleeting moments, frozen in time.</p>
+  </header>
+
+  <section class="about">
+    <p>
+      Hey! I’m Hannah Susan Shaji —<br />
+      A random girl seeking meaning in stillness, beauty in the details, and stories whispered in silence.
+    </p>
+    <p>
+      Photography isn’t just about taking a shot; it’s about feeling the world around me. It lets me capture fleeting moments and hold onto them forever. Whether it’s a laugh, a sunset, or a quiet glance, it’s my way of slowing down time and cherishing those little things that often go unnoticed.
+    </p>
+    <p>
+      I love capturing portraits of people — their smiles, their personalities, and the special moments I get to share with them. Whether it’s the joy in their eyes or the peacefulness of a quiet moment, I find happiness in preserving memories and emotions that will last, allowing others to relive those moments too.
+    </p>
+    <p>
+      A photo can make you relive emotions, tell a story, or just remind you of the beauty in everyday life. For me, it’s more than just a hobby; it’s my way of connecting, creating, and sharing what matters most.
+    </p>
+  </section>
+
+  <h2 class="gallery-title">Gallery</h2>
+
+  <section class="gallery">
+    <img src="portrait1.jpg" alt="Portrait 1">
+    <img src="portrait2.jpg" alt="Portrait 2">
+    <img src="portrait3.jpg" alt="Portrait 3">
+    <img src="portrait4.jpg" alt="Portrait 4">
+    <img src="portrait5.jpg" alt="Portrait 5">
+    <img src="portrait6.jpg" alt="Portrait 6">
+    <img src="portrait7.jpg" alt="Portrait 7">
+    <img src="portrait8.jpg" alt="Portrait 8">
+    <img src="portrait9.jpg" alt="Portrait 9">
+    <img src="portrait10.jpg" alt="Portrait 10">
+    <img src="portrait11.jpg" alt="Portrait 11">
+    <img src="portrait12.jpg" alt="Portrait 12">
+  </section>
+
+  <!-- Image popup -->
+  <div class="popup" id="popup">
+    <img id="popup-img" src="" alt="">
+  </div>
+
+  <footer>
+    <p>📸 Follow me on <a href="https://instagram.com/storiesbysusann" target="_blank">@storiesbysusann</a></p>
+  </footer>
+
+  <script>
+    const popup = document.getElementById("popup");
+    const popupImg = document.getElementById("popup-img");
+    const images = document.querySelectorAll(".gallery img");
+
+    images.forEach(img => {
+      img.addEventListener("click", () => {
+        popupImg.src = img.src;
+        popup.style.display = "flex";
+      });
+    });
+
+    popup.addEventListener("click", () => {
+      popup.style.display = "none";
+    });
+  </script>
+</body>
+</html>
